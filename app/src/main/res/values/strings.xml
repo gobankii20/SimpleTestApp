@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">SimpleTest</string>
+    <string name="sing_in">Sing in</string>
+    <string name="user_name">Username</string>
+    <string name="user_pass">Password</string>
+    <string name="login">Login</string>
+    <string name="message_error">Error</string>
+</resources>
