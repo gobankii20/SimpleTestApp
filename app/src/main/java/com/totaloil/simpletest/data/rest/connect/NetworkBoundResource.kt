@@ -1,8 +1,9 @@
-package com.totaloil.simpletest.remote.connect
+package com.totaloil.simpletest.data.rest.connect
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
-import com.totaloil.simpletest.remote.connect.ApiResponse.onErrorResponseServer
+import com.totaloil.simpletest.data.rest.connect.ApiResponse.onErrorResponseServer
+import com.totaloil.simpletest.data.rest.model.Resource
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.annotations.NonNull
@@ -23,7 +24,6 @@ abstract class NetworkBoundResource<RequestType> {
 
     private fun fetchFromNetwork() {
         val apiResponse = createCall()
-
         disposable = apiResponse
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -33,7 +33,7 @@ abstract class NetworkBoundResource<RequestType> {
                 }
 
                 override fun onError(response: Throwable) {
-                    setValue(Resource.error(onErrorResponseServer(response), null))
+                    setValue(Resource.error(onErrorResponseServer(response)))
                 }
 
                 override fun onComplete() {

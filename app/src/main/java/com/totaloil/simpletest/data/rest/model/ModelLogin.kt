@@ -1,4 +1,4 @@
-package com.totaloil.simpletest.remote.model
+package com.totaloil.simpletest.data.rest.model
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
@@ -12,12 +12,12 @@ import kotlinx.android.parcel.Parcelize
      val user_id: String): Parcelable
 
 data class ModelError(
-    val error: Error
+    val errors: Error
 )
 
 data class Error(
-    val code: Int,
-    val id: Int,
-    val message: String
+    val code: Int?,
+    val id: Int?,
+    val message: String?
 )
 

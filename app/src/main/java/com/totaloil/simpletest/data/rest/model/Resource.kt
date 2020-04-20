@@ -1,7 +1,7 @@
-package com.totaloil.simpletest.remote.connect
+package com.totaloil.simpletest.data.rest.model
 
 
-data class Resource<out T>(val status: Status, val data: T?, val message: String?) {
+data class Resource<T>(val status: Status, val data: T?, val message: String?) {
 
     companion object {
         fun <T> success(data: T?): Resource<T> {
@@ -12,10 +12,10 @@ data class Resource<out T>(val status: Status, val data: T?, val message: String
             )
         }
 
-        fun <T> error(msg: String, data: T?): Resource<T> {
+        fun <T> error(msg: String): Resource<T> {
             return Resource(
                 Status.ERROR,
-                data,
+                null,
                 msg
             )
         }

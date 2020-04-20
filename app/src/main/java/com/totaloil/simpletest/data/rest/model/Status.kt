@@ -1,4 +1,4 @@
-package com.totaloil.simpletest.remote.connect
+package com.totaloil.simpletest.data.rest.model
 
 enum class Status {
     SUCCESS,

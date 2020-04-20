@@ -1,0 +1,16 @@
+{
+  "data": {
+    "id": 3,
+    "image": "http://dev.sqw.wewillapp.support/storage/image_profile_user/L8mEpjeydeSnBTX9r10V4yWgMxKCtVMArwmMhXPk.jpeg",
+    "code": "USER",
+    "name": "พรลภัส เหล็กงาม",
+    "email": "mooyern.hihi@gmail.com",
+    "address": "address",
+    "telephone": "0914283801",
+    "roleId": 6,
+    "roleName": "User",
+    "lat": "13.6461086",
+    "long": "100.418447",
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjEyNjVkZmI2NTAzNTJkODAyYjFlNGVlN2EwY2RjODc0N2UwNWVjNDJhYWMzYjEyNzA1MmQ2OGEwOGJiNjAzMzdiYTBlMDdmOGFhMDk5NmU4In0.eyJhdWQiOiIxIiwianRpIjoiMTI2NWRmYjY1MDM1MmQ4MDJiMWU0ZWU3YTBjZGM4NzQ3ZTA1ZWM0MmFhYzNiMTI3MDUyZDY4YTA4YmI2MDMzN2JhMGUwN2Y4YWEwOTk2ZTgiLCJpYXQiOjE1ODY0MjY0NjIsIm5iZiI6MTU4NjQyNjQ2MiwiZXhwIjoxNjE3OTYyNDYyLCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.ct1Gre16zSi_a2lyA0dEIbGKMm_2QMwzS8JBxmbiJBehAt3LlrwczWJcFZQXObE6ekxmEML3WU5FdXSGy5rXNV5hd6ui2kcnBwMAoVlkxBzEXW0czVqEI9ysRZQl8k0p_1OtjOJo5WwZthVx2dhSzBZayWeOYjKicTUVrskIjYT5DvfVi92_aqLQEPRbPRjeO_2GIRUDhLErVmB7GvFVQhz8hL_nmYbpMLFPoKUjvSbugcTPKKEEFBc3KUDJo0wvN67GdFB4g_9kpUTUy0DNQpFq5aSLIHe3BxwVyzgM8T5WSjoJGqB8SqO5Jf2QW5P-n9vjQ-OD7hb_1d1isqLpRTyQVjZrO6g_7R4lxPUxz1IMHnNu1Oze1j5ZRwONWmzUazFu7hYtm8RJg0hLFkGFRYNTPFM5ngAXP0grzs0daoVEonkcBGXrvrxz3fMFjsnmrmU2AzjHTpOr5x9s1T_B18B5KeSQ5x9d1uHgO3SMeQ33v8gMJmCmGSOWsF0jUSZsq85417Jp5rGgnrqs_ByH9JAIHao19sY-iqkU7SChULZN4AcsQha96a1yKMuaF2WInQ7kBEgY6Uidr2RjQrJt_ENSLxz1vRqIFswej0UM8Cnzu0aiGFUUkBazVXeQ76hVejECJh5ooP08gBrXAvmES3WkQlN4S3yEUDcEV0Nprhs"
+  }
+}

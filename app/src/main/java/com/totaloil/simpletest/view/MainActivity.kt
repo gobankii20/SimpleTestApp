@@ -1,10 +1,11 @@
-package com.totaloil.simpletest
+package com.totaloil.simpletest.view
 
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.bumptech.glide.Glide
-import com.totaloil.simpletest.remote.model.ModelLogin
+import com.totaloil.simpletest.R
+import com.totaloil.simpletest.data.rest.model.ModelLogin
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
