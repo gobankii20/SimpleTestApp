@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="dataResponse"
+            type="com.totaloil.simpletest.data.remote.model.response.DataListNews" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clLayoutNews"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/d10dp"
+        android:layout_marginEnd="@dimen/d10dp"
+        android:layout_marginTop="@dimen/d10dp"
+        android:layout_marginBottom="@dimen/d25dp"
+        android:background="@drawable/shape_border_news">
+
+        <ImageView
+            android:id="@+id/ivNews"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="@dimen/width_image_news"
+            android:layout_height="@dimen/height_image_news"
+            android:layout_marginStart="@dimen/d20dp"
+            android:layout_marginEnd="@dimen/d20dp"
+            android:layout_marginTop="@dimen/d20dp"
+            android:layout_marginBottom="@dimen/d20dp"
+            android:adjustViewBounds="true"
+            android:src="@mipmap/ic_launcher"
+            bind:imageUrl="@{dataResponse.image}"/>
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/d10dp"
+            android:layout_marginEnd="@dimen/d10dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/font_sv_bold"
+            android:gravity="center"
+            android:lines="2"
+            android:text="@{dataResponse.title}"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/font_text_20"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivNews"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

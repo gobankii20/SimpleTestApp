@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
+
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#D81B60</color>
 
-
     <color name="colorRed">#F44336</color>
+    <color name="colorWhite">#FCFCFC</color>
+    <color name="colorBlack">#000000</color>
+
+    <color name="bgApp">#F3F2F2</color>
+    <color name="colorUnderLine">#000000</color>
+    <color name="colorUnderLineGray">#EEEEEE</color>
+
+    <color name="colorButtonBack">#000000</color>
+    <color name="colorButtonBackPress">#202020</color>
+
 </resources>

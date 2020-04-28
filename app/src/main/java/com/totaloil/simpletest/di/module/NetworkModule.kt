@@ -1,9 +1,9 @@
 package com.totaloil.simpletest.di.module
 
-import com.totaloil.simpletest.data.rest.APIService
-import com.totaloil.simpletest.data.rest.connect.OkHttpClientBuilder
-import com.totaloil.simpletest.data.rest.connect.RetrofitBuilder
-import com.totaloil.simpletest.data.rest.connect.TokenExpiredInterceptor
+import com.totaloil.simpletest.data.service.APIService
+import com.totaloil.simpletest.data.remote.OkHttpClientBuilder
+import com.totaloil.simpletest.data.remote.RetrofitBuilder
+import com.totaloil.simpletest.data.remote.TokenExpiredInterceptor
 import org.koin.dsl.module
 
 val networkModule = module {
@@ -12,5 +12,6 @@ val networkModule = module {
 
     factory { TokenExpiredInterceptor() }
 
-    single<APIService> { get<RetrofitBuilder>().build(OkHttpClientBuilder.getUrlServer()) }
+    single<APIService> { get<RetrofitBuilder>().build(
+        OkHttpClientBuilder.getUrlServer()) }
 }

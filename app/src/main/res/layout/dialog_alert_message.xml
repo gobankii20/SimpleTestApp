@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="text"
+            type="String" />
+        <variable
+            name="title"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_padding_size_large"
+        android:layout_marginStart="@dimen/margin_padding_size_large"
+        android:background="@drawable/shape_bg_dialog"
+        android:paddingStart="@dimen/d10dp"
+        android:paddingEnd="@dimen/d10dp"
+        android:paddingTop="@dimen/d10dp"
+        android:paddingBottom="@dimen/d15dp">
+
+        <TextView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingLeft="@dimen/margin_padding_size_small"
+            android:paddingRight="@dimen/margin_padding_size_small"
+            android:paddingTop="@dimen/margin_padding_size_medium"
+            android:text="@{title}"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/font_text_20"
+            android:fontFamily="@font/font_sv_bold"/>
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@+id/tv_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/tv_message"
+            android:layout_marginTop="@dimen/d10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingLeft="@dimen/margin_padding_size_small"
+            android:paddingRight="@dimen/margin_padding_size_small"
+            android:paddingBottom="@dimen/margin_padding_size_medium"
+            android:text="@{text}"
+            android:textSize="@dimen/font_text_18"
+            android:textColor="@color/colorPrimary"
+            android:fontFamily="@font/font_sv_medium" />
+
+
+        <Button
+            app:layout_constraintTop_toBottomOf="@+id/tv_message"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/d10dp"
+            android:id="@+id/tvOkey"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_button_okey"
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/shape_button_dialog"
+            android:textSize="@dimen/font_text_20"
+            android:fontFamily="@font/font_sv_bold" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

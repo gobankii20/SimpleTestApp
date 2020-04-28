@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="com.totaloil.simpletest.data.remote.model.Status" />
+
+        <variable
+            name="loadResource"
+            type="com.totaloil.simpletest.data.remote.model.Resource" />
+
+        <variable
+            name="dataViewModel"
+            type="com.totaloil.simpletest.view.newsDetail.NewDetailViewModel" />
+
+        <variable
+            name="dataResponse"
+            type="com.totaloil.simpletest.data.remote.model.response.DataListNews" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.newsDetail.NewDetailActivity">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!--                <androidx.constraintlayout.widget.ConstraintLayout-->
+                <!--                    android:id="@+id/clLayoutHeader"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="@dimen/width_image_new_detail"-->
+                <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+                <!--                    app:layout_constraintStart_toStartOf="parent"-->
+                <!--                    app:layout_constraintTop_toTopOf="parent">-->
+
+                <ImageView
+                    android:id="@+id/ivNews"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/width_image_new_detail"
+                    android:adjustViewBounds="true"
+                    android:paddingBottom="@dimen/d20dp"
+                    android:src="@mipmap/ic_launcher"
+                    app:imageUrl="@{dataResponse.image}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/lineImageVertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.33" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginEnd="@dimen/d20dp"
+                    android:background="@drawable/shape_bg_circle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lineImageVertical">
+
+
+                    <ImageView
+                        android:layout_width="@dimen/d35dp"
+                        android:layout_height="@dimen/d35dp"
+                        android:layout_margin="@dimen/d5dp"
+                        android:background="@{dataViewModel.isSelectedLike() ? @drawable/ic_like : @drawable/ic_like_blank}"
+                        android:onClick="@{() -> dataViewModel.onClickSelectedLike()}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tvNewTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/d20dp"
+                    android:fontFamily="@font/font_sv_bold"
+                    android:gravity="center_horizontal"
+                    android:text="@{dataResponse.title}"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/font_text_20"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ivNews" />
+
+
+                <TextView
+                    android:id="@+id/tvNewDetail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/d20dp"
+                    android:layout_marginTop="@dimen/d20dp"
+                    android:layout_marginEnd="@dimen/d20dp"
+                    android:fontFamily="@font/font_sv_bold"
+                    android:text="@{dataResponse.detail}"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/font_text_18"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvNewTitle" />
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/lineDateVertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.6" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/d20dp"
+                    android:layout_marginTop="@dimen/d20dp"
+                    android:layout_marginEnd="@dimen/d20dp"
+                    android:fontFamily="@font/font_sv_bold"
+                    android:gravity="end"
+                    android:text="@{dataResponse.create}"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/font_text_18"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/lineDateVertical"
+                    app:layout_constraintTop_toBottomOf="@+id/tvNewDetail" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            app:visibleGone="@{loadResource.status == Status.LOADING}">
+
+            <include layout="@layout/item_loading" />
+
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,8 +1,9 @@
 <resources>
-    <string name="app_name">SimpleTest</string>
-    <string name="sing_in">Sing in</string>
-    <string name="user_name">Username</string>
-    <string name="user_pass">Password</string>
-    <string name="login">Login</string>
-    <string name="message_error">Error</string>
+    <string name="app_name">PADASOFT</string>
+
+    <string name="user_name">ชื่อผู้ใช้</string>
+    <string name="user_pass">รหัสผ่าน</string>
+    <string name="login">ลงชื่อเข้าใช้</string>
+    <string name="txt_button_okey">OK</string>
+    <string name="title_dialog">ข้อความ</string>
 </resources>

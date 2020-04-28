@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <dimen name="margin_padding_size_small">8dp</dimen>
+    <dimen name="margin_padding_size_medium">16dp</dimen>
+    <dimen name="margin_padding_size_large">24dp</dimen>
+    <dimen name="margin_padding_size_xlarge" tools:keep="@dimen/margin_padding_size_xlarge">32dp</dimen>
+    <dimen name="margin_padding_size_xxlarge" tools:keep="@dimen/margin_padding_size_xxlarge">40dp</dimen>
+
+    <dimen name="width_border_news">2dp</dimen>
+    <dimen name="height_underline">2dp</dimen>
+    <dimen name="height_image_news">100dp</dimen>
+    <dimen name="width_image_news">120dp</dimen>
+    <dimen name="width_image_new_detail">300dp</dimen>
+
+    <dimen name="d3dp">3dp</dimen>
+    <dimen name="d5dp">5dp</dimen>
+    <dimen name="d10dp">10dp</dimen>
+    <dimen name="d15dp">15dp</dimen>
+    <dimen name="d20dp">20dp</dimen>
+    <dimen name="d25dp">25dp</dimen>
+    <dimen name="d30dp">30dp</dimen>
+    <dimen name="d35dp">35dp</dimen>
+    <dimen name="d40dp">40dp</dimen>
+    <dimen name="d50dp">50dp</dimen>
+
+    <dimen name="font_text_14">14sp</dimen>
+    <dimen name="font_text_16">16sp</dimen>
+    <dimen name="font_text_18">18sp</dimen>
+    <dimen name="font_text_20">20sp</dimen>
+    <dimen name="font_text_22">22sp</dimen>
+</resources>

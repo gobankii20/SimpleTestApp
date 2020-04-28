@@ -1,65 +1,70 @@
 package com.totaloil.simpletest.view.login
 
 import android.annotation.SuppressLint
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.view.MotionEvent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import com.totaloil.simpletest.R
-import com.totaloil.simpletest.data.rest.model.Status
+import com.totaloil.simpletest.data.remote.model.Status
 import com.totaloil.simpletest.databinding.ActivityLoginBinding
-import com.totaloil.simpletest.utils.DetechOnTouchListenerImp
-import com.totaloil.simpletest.utils.attribute.timeHandler.LogoutTimeHandler
+import com.totaloil.simpletest.utils.DialogPresenter
+import com.totaloil.simpletest.view.home.MainActivity
+import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.core.parameter.parametersOf
 
-class LoginActivity : AppCompatActivity(),LogoutTimeHandler {
-
-    private val viewModel : LoginViewModel by viewModel()
+class LoginActivity : AppCompatActivity(){
 
     private lateinit var binding: ActivityLoginBinding
 
-    lateinit var mAnimOnTouchListenerImp: DetechOnTouchListenerImp
+    private val viewModel: LoginViewModel by viewModel()
+
+    private val dialogPresenter: DialogPresenter by inject { parametersOf(applicationContext) }
+
+    companion object{
+        fun newInstance(context: Context){
+            val intentLogin = Intent(context,LoginActivity::class.java)
+            context.startActivity(intentLogin)
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
 
-        initViewModel()
         initView()
-    }
-
-    private fun initViewModel() {
-       binding.dataViewModel = viewModel
-       mAnimOnTouchListenerImp = DetechOnTouchListenerImp(this)
-    }
-
-
-    override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
-        if(ev!!.action == MotionEvent.ACTION_UP)
-            mAnimOnTouchListenerImp.onStartTimeInterval()
-        return super.dispatchTouchEvent(ev)
+        initViewModel()
     }
 
     @SuppressLint("ClickableViewAccessibility")
     private fun initView() {
-        viewModel.dataResponse.observe(this, Observer {
-            binding.loadResource = it
-            when (it.status) {
-                Status.SUCCESS -> {
-//                    val intentMain = Intent(this, MainActivity::class.java)
-//                    intentMain.putExtra("data", it.data)
-//                    startActivity(intentMain)
-                }
-                Status.ERROR -> binding.tvError.text = it.message
-                Status.LOADING -> TODO()
-            }
-        })
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
+
     }
 
-    override fun onDetechUserNotTouch() {
-        Log.i("MotionEvent","Logout")
+    private fun initViewModel() {
+        binding.dataViewModel = viewModel
+        onSubScriptLogin()
+    }
+
+    private fun onSubScriptLogin() {
+        viewModel.mResponseLogin.observe(this, Observer {
+            binding.loadResource = it
+
+            when (it.status) {
+                Status.SUCCESS -> {
+                    MainActivity.newInstance(this)
+                }
+                Status.ERROR -> {
+                    dialogPresenter.dialogMessage(resources.getString(R.string.title_dialog), it.message){
+                        MainActivity.newInstance(this)
+                    }
+                }
+                else -> print("no event")
+            }
+        })
     }
 
 }
