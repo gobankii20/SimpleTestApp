@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity(), LogoutTimeHandler {
 
     private val viewModel: MainViewModel by viewModel()
 
-    private val mDialogPresenter: DialogPresenter by inject { parametersOf(applicationContext) }
+    private val mDialogPresenter: DialogPresenter by inject { parametersOf(binding.root.context) }
 
     private lateinit var mNewsAdapter: NewsAdapter
 

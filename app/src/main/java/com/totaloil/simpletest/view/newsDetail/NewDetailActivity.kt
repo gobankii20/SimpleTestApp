@@ -36,7 +36,7 @@ class NewDetailActivity : AppCompatActivity(), LogoutTimeHandler {
 
     private val mDateManage: DateManage by inject()
 
-    private val mDialogPresenter: DialogPresenter by inject { parametersOf(applicationContext) }
+    private val mDialogPresenter: DialogPresenter by inject { parametersOf(binding.root.context) }
 
     companion object {
         private const val TAG_EXTRA = "ob_news"

@@ -22,7 +22,7 @@ class LoginActivity : AppCompatActivity(){
 
     private val viewModel: LoginViewModel by viewModel()
 
-    private val dialogPresenter: DialogPresenter by inject { parametersOf(applicationContext) }
+    private val dialogPresenter: DialogPresenter by inject { parametersOf(binding.root.context) }
 
     companion object{
         fun newInstance(context: Context){
