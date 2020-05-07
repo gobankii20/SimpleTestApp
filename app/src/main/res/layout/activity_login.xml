@@ -19,7 +19,7 @@
 
     </data>
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/bgApp"
@@ -157,12 +157,11 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone"
             app:visibleGone="@{loadResource.status == Status.LOADING}">
 
             <include layout="@layout/item_loading" />
 
         </FrameLayout>
 
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -13,8 +13,8 @@ import com.totaloil.simpletest.data.remote.model.Status
 import com.totaloil.simpletest.data.remote.model.response.DataListNews
 import com.totaloil.simpletest.databinding.ActivityMainBinding
 import com.totaloil.simpletest.utils.DialogPresenter
-import com.totaloil.simpletest.utils.SystemUIManage
 import com.totaloil.simpletest.utils.attribute.timeHandler.LogoutTimeHandler
+import com.totaloil.simpletest.utils.hideSystemMenuBottom
 import com.totaloil.simpletest.utils.timeInterval.DetechOnTouchListenerImp
 import com.totaloil.simpletest.view.login.LoginActivity
 import com.totaloil.simpletest.view.newsDetail.NewDetailActivity
@@ -30,8 +30,6 @@ class MainActivity : AppCompatActivity(), LogoutTimeHandler {
     private val viewModel: MainViewModel by viewModel()
 
     private val mDialogPresenter: DialogPresenter by inject { parametersOf(applicationContext) }
-
-    private val mSystemUIManage: SystemUIManage by inject { parametersOf(applicationContext) }
 
     private lateinit var mNewsAdapter: NewsAdapter
 
@@ -59,7 +57,7 @@ class MainActivity : AppCompatActivity(), LogoutTimeHandler {
 
     private fun initView() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        mSystemUIManage.hideSystemMenuBottom()
+        this.hideSystemMenuBottom()
         setDataListNews()
 
     }
